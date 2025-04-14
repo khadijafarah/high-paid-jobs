@@ -47,8 +47,9 @@ export default function CountdownTimer() {
   }, [])
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12 text-center">
-      <h2 className="mb-8 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
+  <div className="bg-card-foreground">
+      <div className="mx-auto max-w-4xl px-4 py-12 text-center">
+      <h2 className="mb-8 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl dark:text-white">
         Door Closes for FREE Career Auditing
       </h2>
       <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6">
@@ -58,6 +59,7 @@ export default function CountdownTimer() {
         <TimeBox value={timeLeft.seconds.toString().padStart(2, "0")} label="Seconds" />
       </div>
     </div>
+  </div>
   )
 }
 

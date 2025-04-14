@@ -2,6 +2,7 @@
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link"
 
 interface FAQItem {
   question: string
@@ -44,13 +45,13 @@ const faqItems: FAQItem[] = [
 export default function FAQSection() {
   return (
     <section className="  w-full bg-accent py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Got Questions? We&apos;ve Got Answers</h2>
-          <p className="text-gray-600">Find answers to our most frequently asked questions</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-2 ">Got Questions? We&apos;ve Got Answers</h2>
+          <p className="text-gray">Find answers to our most frequently asked questions</p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4 ">
+        <Accordion type="single" collapsible className="space-y-5 ">
           {faqItems.map((item, index) => (
             <AccordionItem
               key={index}
@@ -58,7 +59,7 @@ export default function FAQSection() {
               className="border rounded-md bg-background shadow-sm overflow-hidden"
             >
               <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                <span className="text-left font-medium text-black">{item.question}</span>
+                <span className="text-left text-lg text-black">{item.question}</span>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 pt-0 text-black">{item.answer}</AccordionContent>
             </AccordionItem>
@@ -66,10 +67,12 @@ export default function FAQSection() {
         </Accordion>
 
         <div className="text-center mt-10">
-          <p className="text-gray-700 mb-4">Have more questions? Ask us during your FREE consultation!</p>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-2 h-auto">
-            Book Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
+          <p className="text-gray mb-4">Have more questions? Ask us during your FREE consultation!</p>
+          <Link href="#consultation">
+        <Button className="bg-primary rounded-full text-lg text-white font-medium hover:bg-blue-700 px-6 py-2">
+            Book Free Consultation <ArrowRight className="h-5 w-5 ml-2" />
           </Button>
+        </Link>
         </div>
       </div>
     </section>
